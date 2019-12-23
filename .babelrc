@@ -20,7 +20,8 @@
     [
       "@babel/plugin-proposal-object-rest-spread",
       { "useBuiltIns": true }
-    ]
+    ],
+    "jsx-control-statements"
   ],
   "env": {
     "production": {
