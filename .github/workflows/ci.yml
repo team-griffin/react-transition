@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: GitHub Action for Yarn
+    - uses: actions/checkout@v1
+    - name: uses node
+      uses: actions/setup-node@v1.1.0
+      with:
+        # Optional scope for authenticating against scoped registries
+        scope: "@team-griffin"
+    - run: npm i -g yarn
+    - name: yarn install, build, and test
+      run: |
+        yarn install
+        yarn build
+        yarn lint
+        yarn test
+    - name: publish
+      run: yarn semantic-release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
