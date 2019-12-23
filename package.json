@@ -1,6 +1,6 @@
 {
   "name": "@team-griffin/react-transition",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/cjs/react-transition.js",
   "module": "dist/es/react-transition.js",
   "types": "dist/es/index.d.ts",
